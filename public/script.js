@@ -23,13 +23,13 @@ searchBox.addListener('places_changed', () => {
     })
 })
 
-
+const iconElement = document.getElementById('icon')
 const locationElement = document.querySelector('[data-location]')
 const tempElement = document.querySelector('[data-temp]')
 const statusElement = document.querySelector('[data-status]')
 const windElement = document.querySelector('[data-wind]')
 const humidityElement = document.querySelector('[data-humidity]')
-
+iconElement.src = "https://cdn.weatherapi.com/weather/64x64/day/116.png"
 
 function setWeatherData(data, place)  {
     locationElement.textContent = place
@@ -37,4 +37,5 @@ function setWeatherData(data, place)  {
     tempElement.textContent = data.temp_c
     windElement.textContent = data.wind_kph
     humidityElement.textContent = data.humidity
+    iconElement.src = `https://${data.condition.icon}`
 }
