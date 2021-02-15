@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weatherist</title>
-
     <link rel="stylesheet" href="main.css">
+
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDig6f5-J8pP_OjwKWaIqfeO3AtkTffHuo&libraries=places">
+    </script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -18,25 +20,25 @@
         </div>
         <div class="content">
             <div class="general-info">
-                <div class="status">Enter A Location</div>
-                <div class="location">To Find the Location</div>
+                <div class="status" data-status="">Enter A Location</div>
+                <div class="location" data-location="">To Find the Location</div>
             </div>
             <div class="detail-section">
                 <div class="detail">
                     <div class="title">Wind</div>
-                    <div class="value">TBD</div>
+                    <div class="value" data-wind="">TBD</div>
                 </div>
                 <div class="detail">
                     <div class="title">Temperature</div>
-                    <div class="value">TBD</div>
+                    <div class="value" data-temp="">TBD</div>
                 </div>
                 <div class="detail">
-                    <div class="title">Precipitation</div>
-                    <div class="value">TBD</div>
+                    <div class="title">Humidity</div>
+                    <div class="value" data-humidity="">TBD</div>
                 </div>
             </div>
             <div class="search-container">
-                <input type="text" name="city" id="" class="city-search">
+                <input type="text" name="city" data-city="" class="city-search" placeholder="Enter location">
             </div>
         </div>
     </div>
