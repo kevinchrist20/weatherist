@@ -19,6 +19,7 @@ searchBox.addListener('places_changed', () => {
             lng: lng
         })
     }).then(res => res.json()).then(data => {
+        console.log(data)
         setWeatherData(data, place.formatted_address)
     })
 })
@@ -34,8 +35,8 @@ iconElement.src = "https://cdn.weatherapi.com/weather/64x64/day/116.png"
 function setWeatherData(data, place)  {
     locationElement.textContent = place
     statusElement.textContent = data.condition.text
-    tempElement.textContent = data.temp_c
-    windElement.textContent = data.wind_kph
+    tempElement.textContent = `${data.temp_c} C / ${data.temp_f} F`
+    windElement.textContent = `${data.wind_kph} kph / ${data.wind_mph} mph  (${data.wind_dir})`
     humidityElement.textContent = data.humidity
     iconElement.src = `https://${data.condition.icon}`
 }
